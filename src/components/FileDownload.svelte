@@ -43,6 +43,17 @@
       &:hover {
         background-color: #5c6d8a;
       }
+
+      @media (max-width: 768px) {
+        img {
+          width: 2rem;
+        }
+
+        h2 {
+          font-size: 1rem;
+          padding-inline: 0.5rem;
+        }
+      }
     }
   }
 </style>

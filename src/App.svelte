@@ -4,13 +4,15 @@
 </script>
 
 <main>
-  <div class="hero">
+  <div class="circles">
     <span class="circle" />
     <span class="circle" />
     <span class="circle" />
     <span class="circle" />
     <span class="circle" />
+  </div>
 
+  <div class="hero">
     <img src="/Zamma.svg" alt="Zamma" />
     <h2>2024 in Holzkirchen</h2>
     <p>
@@ -57,56 +59,85 @@
     }
   }
   main {
-    .circle {
-      display: block;
-      width: 200px;
-      height: 200px;
-      border-radius: 100%;
-      background-color: rgba(37, 178, 62, 0.5);
+    .circles {
       position: absolute;
-      top: 50%;
-      left: 70%;
+      top: -2rem;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
 
-      animation: move 10s infinite;
-
-      &:nth-child(2) {
-        top: 5%;
-        left: 55%;
-        width: 150px;
-        height: 150px;
-        background-color: rgba(1, 49, 87, 0.5);
-
-        animation-delay: 1s;
-      }
-
-      &:nth-child(3) {
-        top: 28%;
-        left: 20%;
-        width: 100px;
-        height: 100px;
-        background-color: rgba(166, 125, 184, 0.5);
-
-        animation-delay: 2s;
-      }
-
-      &:nth-child(4) {
-        top: 33%;
-        left: 80%;
-        width: 100px;
-        height: 100px;
-        background-color: rgba(125, 140, 163, 0.5);
-
-        animation-delay: 3s;
-      }
-
-      &:nth-child(5) {
+      .circle {
+        display: block;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background-color: rgba(37, 178, 62, 0.5);
+        position: absolute;
         top: 50%;
-        left: 10%;
-        width: 150px;
-        height: 150px;
-        background-color: rgba(125, 140, 163, 0.5);
+        left: 70%;
 
-        animation-delay: 4s;
+        animation: move 10s infinite;
+
+        &:nth-child(2) {
+          top: 5%;
+          left: 55%;
+          width: 150px;
+          height: 150px;
+          background-color: rgba(1, 49, 87, 0.5);
+
+          animation-delay: 1s;
+
+          @media (max-width: 768px) {
+            top: 10%;
+            left: 15%;
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        &:nth-child(3) {
+          top: 28%;
+          left: 20%;
+          width: 100px;
+          height: 100px;
+          background-color: rgba(166, 125, 184, 0.5);
+
+          animation-delay: 2s;
+
+          @media (max-width: 768px) {
+            left: 0;
+          }
+        }
+
+        &:nth-child(4) {
+          top: 33%;
+          left: 80%;
+          width: 100px;
+          height: 100px;
+          background-color: rgba(125, 140, 163, 0.5);
+
+          animation-delay: 3s;
+
+          @media (max-width: 768px) {
+            top: 80%;
+            left: 0;
+          }
+        }
+
+        &:nth-child(5) {
+          top: 50%;
+          left: 10%;
+          width: 150px;
+          height: 150px;
+          background-color: rgba(125, 140, 163, 0.5);
+
+          animation-delay: 4s;
+
+          @media (max-width: 768px) {
+            top: 20%;
+            left: 80%;
+          }
+        }
       }
     }
     .hero {
@@ -114,6 +145,7 @@
       flex-direction: column;
       place-items: center;
       margin-top: 20vh;
+      margin-inline: 2rem;
 
       img {
         width: 30rem;
@@ -132,6 +164,18 @@
         max-width: 900px;
         z-index: 1;
       }
+
+      @media (max-width: 768px) {
+        margin-top: 10vh;
+
+        img {
+          width: 20rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
     }
 
     .downloads {
@@ -142,6 +186,7 @@
       padding: 1rem 0 5rem 0;
       margin-top: 15rem;
       margin-bottom: 5rem;
+      margin-inline: 2rem;
       border-radius: 30px;
 
       img {
@@ -153,6 +198,12 @@
       h2 {
         font-size: 2rem;
         padding-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 10rem;
+        margin-inline: 1rem;
+        padding-inline: 1rem;
       }
     }
   }

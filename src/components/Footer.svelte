@@ -14,6 +14,7 @@
       justify-content: center;
       text-decoration: none;
       color: inherit;
+      margin-bottom: 2rem;
 
       h1 {
         font-size: 1.3rem;
@@ -23,6 +24,18 @@
 
       img {
         height: 4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      a {
+        h1 {
+          font-size: 1rem;
+        }
+
+        img {
+          height: 3rem;
+        }
       }
     }
   }
