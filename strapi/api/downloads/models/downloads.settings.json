@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "downloads",
+  "info": {
+    "name": "Downloads",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "File": {
+      "type": "component",
+      "repeatable": true,
+      "component": "file.file",
+      "required": true
+    }
+  }
+}
