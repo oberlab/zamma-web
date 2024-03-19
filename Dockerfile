@@ -1,15 +1,15 @@
-FROM alpine:latest
-
-RUN apk add --no-cache nodejs npm
+FROM node:alpine
 
 WORKDIR /app
 
 COPY package*.json /app
 
-RUN npm install
+RUN npm ci
 
 COPY . .
 
 RUN npm run build
 
 CMD [ "npm", "run", "preview" ]
+
+# -> Running on port 3000
