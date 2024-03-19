@@ -1,6 +1,14 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import FileDownload from "./components/FileDownload.svelte";
   import Footer from "./components/Footer.svelte";
+  import { getDownloadFiles, type DownloadFile } from "./lib/StrapiData";
+
+  let DownloadFiles: DownloadFile[] = [];
+
+  onMount(async () => {
+    DownloadFiles = await getDownloadFiles();
+  });
 </script>
 
 <main>
@@ -32,14 +40,9 @@
     <img src="/icons/Arrow.svg" alt="Arrow" />
     <h2>Downloads</h2>
     <div>
-      <FileDownload
-        title="Anmeldeformular Seifenkistenrennen"
-        url="/downloads/Anmeldeformular-Seifenkistenrennen.pdf"
-      />
-      <FileDownload
-        title="Regelwerk Seifenkistenrennen"
-        url="/downloads/Regelwerk-Seifenkistenrennen.pdf"
-      />
+      {#each DownloadFiles as file}
+        <FileDownload title={file.name} url={file.url} />
+      {/each}
     </div>
   </div>
 
