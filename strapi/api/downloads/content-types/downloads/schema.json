@@ -1,22 +1,21 @@
 {
   "kind": "singleType",
-  "collectionName": "downloads",
+  "collectionName": "downloadss",
   "info": {
-    "name": "Downloads",
-    "description": ""
+    "singularName": "downloads",
+    "pluralName": "downloadss",
+    "displayName": "Downloads"
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
     "File": {
+      "displayName": "File",
       "type": "component",
       "repeatable": true,
-      "component": "file.file",
-      "required": true
+      "component": "file.file"
     }
   }
 }

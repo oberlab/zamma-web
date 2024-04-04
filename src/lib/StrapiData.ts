@@ -7,18 +7,20 @@ export type DownloadFile = {
   url: string;
 };
 
+async function getImgURL(id: number) {
+  const response = await fetch(`${STRAPI_URL}/files/lel/${id}`);
+  const data = await response.json();
+  const URL = data.url;
+}
+
 export async function getDownloadFiles(): Promise<DownloadFile[]> {
-  const response = await fetch(`${STRAPI_URL}/downloads`);
+  const response = await fetch(`${STRAPI_URL}/api/downloads?populate=File`);
   const data: DownloadFilesResponse = await response.json();
-  const { File } = data;
+  const Files = data.data.attributes.File;
 
   let files: DownloadFile[] = [];
-  File.forEach((file) => {
-    files.push({
-      id: file.id,
-      name: file.Name,
-      url: STRAPI_URL + file.Datei.url,
-    });
+  Files.forEach((file) => {
+    // const fileData = await fetch(`${STRAPI_URL}/api/files/${file.id}`);
   });
 
   return files;

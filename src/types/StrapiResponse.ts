@@ -1,29 +1,22 @@
-export type DownloadFilesResponse = {
-  id: number;
-  published_at: string;
-  created_at: string;
-  updated_at: string;
-  File: {
+export type ImageResponse = {
+  data: {
     id: number;
-    Name: string;
-    Datei: {
-      id: number;
-      name: string;
-      alternativeText: string;
-      caption: string;
-      width: number | null;
-      height: number | null;
-      formats: string[] | null;
-      hash: string;
-      ext: string;
-      mime: string;
-      size: number;
-      url: string;
-      previewUrl: string | null;
-      provider: string;
-      provider_metadata: string | null;
-      created_at: string;
-      updated_at: string;
+  };
+  meta: {};
+};
+
+export type DownloadFilesResponse = {
+  data: {
+    id: number;
+    attributes: {
+      createdAt: string;
+      updatedAt: string;
+      publishedAt: string;
+      File: {
+        id: number;
+        Titel: string;
+      }[];
     };
-  }[];
+  };
+  meta: {};
 };
