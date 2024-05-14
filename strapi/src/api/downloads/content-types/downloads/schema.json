@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "downloadss",
+  "info": {
+    "singularName": "downloads",
+    "pluralName": "downloadss",
+    "displayName": "Downloads",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titel": {
+      "type": "string",
+      "required": true
+    },
+    "Datei": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

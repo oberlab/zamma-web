@@ -5,25 +5,26 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data:rw
     environment:
-      POSTGRES_USER: ${DATABASE_USERNAME}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
       POSTGRES_DB: strapi
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
 
   strapi:
-    image: strapi/strapi
+    image: ghcr.io/sehrgutesoftware/strapi-dockerized/dev:latest
     restart: always
-    volumes:
-      - ./strapi:/srv/app
     environment:
       DATABASE_CLIENT: postgres
-      DATABASE_NAME: strapi
       DATABASE_HOST: postgres
       DATABASE_PORT: 5432
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    volumes:
+      - ${PWD}/strapi/src:/app/src
+      - ${PWD}/strapi/config:/app/config
     ports:
       - "1337:1337"
     depends_on:
