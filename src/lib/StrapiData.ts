@@ -14,14 +14,17 @@ async function getImgURL(id: number) {
 }
 
 export async function getDownloadFiles(): Promise<DownloadFile[]> {
-  const response = await fetch(`${STRAPI_URL}/api/downloads?populate=File`);
+  const response = await fetch(`${STRAPI_URL}/api/downloadss?populate=Datei`);
   const data: DownloadFilesResponse = await response.json();
-  const Files = data.data.attributes.File;
+  const Files = data.data;
 
   let files: DownloadFile[] = [];
-  Files.forEach((file) => {
-    // const fileData = await fetch(`${STRAPI_URL}/api/files/${file.id}`);
-  });
+  for (const file of Files) {
+    const id = file.attributes.Datei.data.id;
+    const name = file.attributes.Titel;
+    const url = STRAPI_URL + file.attributes.Datei.data.attributes.url;
+    files.push({ id, name, url });
+  }
 
   return files;
 }
