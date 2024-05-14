@@ -3,6 +3,16 @@
     <h1>powered by</h1>
     <img src="/Oberlab.png" alt="Oberlab" />
   </a>
+
+  <div class="imp">
+    <a
+      href="https://oberlab.de/kontakt-impressum.html"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <h1>Impressum</h1>
+    </a>
+  </div>
 </main>
 
 <style lang="scss">
@@ -27,6 +37,14 @@
       }
     }
 
+    .imp {
+      a {
+        h1 {
+          font-size: 1rem;
+        }
+      }
+    }
+
     @media (max-width: 768px) {
       a {
         h1 {
@@ -35,6 +53,13 @@
 
         img {
           height: 3rem;
+        }
+      }
+      .imp {
+        a {
+          h1 {
+            font-size: 0.8rem;
+          }
         }
       }
     }
