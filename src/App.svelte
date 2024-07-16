@@ -36,6 +36,17 @@
     </p>
   </div>
 
+	<div class="ergebnisse">
+	<h2>Ergebnisse</h2>
+	<div>
+	<ul>
+	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrgjUuAqRtqmJsky">Kategorie 1</a></li>
+	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrHR3QRxJ2Ow3T3r">Kategorie 2</a></li>
+	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrk48iweWRtsFYU1">Kategorie 3</a></li>
+	</ul>
+	</div>
+	</div>
+
   <div class="downloads">
     <img src="/icons/Arrow.svg" alt="Arrow" />
     <h2>Downloads</h2>
@@ -179,6 +190,40 @@
         p {
           font-size: 1rem;
         }
+      }
+    }
+
+    .ergebnisse {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #d9d9d9;
+      padding: 1rem 0 5rem 0;
+      margin-top: 15rem;
+      margin-bottom: 5rem;
+      margin-inline: 2rem;
+      border-radius: 30px;
+
+      img {
+        width: 4rem;
+        position: relative;
+        top: -2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        padding-bottom: 1rem;
+      }
+
+      ul {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 10rem;
+        margin-inline: 1rem;
+        padding-inline: 1rem;
       }
     }
 
