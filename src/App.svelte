@@ -37,12 +37,12 @@
   </div>
 
 	<div class="ergebnisse">
-	<h2>Ergebnisse</h2>
+	<h2>Platzierungen in Rennklassen</h2>
 	<div>
 	<ul>
-	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrgjUuAqRtqmJsky">Kategorie 1</a></li>
-	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrHR3QRxJ2Ow3T3r">Kategorie 2</a></li>
-	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrk48iweWRtsFYU1">Kategorie 3</a></li>
+	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrgjUuAqRtqmJsky">Rennklasse 1 - Bergab</a></li>
+	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrHR3QRxJ2Ow3T3r">Rennklasse 2 - Gaudirennen</a></li>
+	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrk48iweWRtsFYU1">Rennklasse 3 - Bergauf</a></li>
 	</ul>
 	</div>
 	</div>
