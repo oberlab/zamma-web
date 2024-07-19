@@ -22,8 +22,28 @@
 
   <div class="hero">
     <img src="/Zamma.svg" alt="Zamma" />
-    <h2>2024 in Holzkirchen</h2>
-    <p>
+    <h2>Zamma obe (und wieda auffe)</h2>
+	<p>
+	1. Holzkirchener Seifenkistenrennen im Rahmen des Zamma - Das Festival in Oberbayern
+	</p>
+	<p><b>Links zu den Platzierungen weiter unten</b></p>
+	<p>
+	Wann? Samstag 20. Juli 2024, Rennstart ab 14:00 Uhr; ab 12:00 Uhr Technische Abnahme in den Fahrer*innen Lager; ab 13:30 Uhr Start der LIVE-Moderation; Siegerehrung abends am Marktplatz
+	</p>
+	<p>
+	Wo? Auf der Münchner Straße zwischen Oskar-von-Miller-Platz und Bahnhofsplatz (Straßensperrung am Renntag zwischen 12:00 Uhr und 18:00 Uhr)
+	</p>
+	<p>
+	Wer? Über 20 Teams in verschiedenen Rennklasssen
+	</p>
+	<p>
+	Verschiedene Rennklassen<br>
+	1) Klassisches Seifenkistenrennen bergab<br>
+	2) Gaudi-Rennen mit Wertungspunkten<br>
+	3) Seifenkistenrennen bergauf mit Nachhaltigen Antrieben
+	</p>
+<!--	<p>
+	
       Bei ZAMMA erwartet die Bürgerinnen und Bürger von Holzkirchen ein
       mehrtägiges Programm aus den Bereichen Kultur, Jugend, Gesellschaft &
       Soziales, Religion, Sport & Bewegung, Tradition & Heimat, Umwelt & Natur
@@ -33,7 +53,7 @@
       in den Regionen. Der Bezirk Oberbayern veranstaltet das Festival alle zwei
       Jahre mit einer ausgewählten Bewerberkommune – zuletzt mit Bad Aibling und
       Garmisch-Partenkirchen.
-    </p>
+    </p> -->
   </div>
 
 	<div class="ergebnisse">
