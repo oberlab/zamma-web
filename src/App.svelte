@@ -1,84 +1,44 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import {onMount} from "svelte";
   import FileDownload from "./components/FileDownload.svelte";
   import Footer from "./components/Footer.svelte";
-  import { getDownloadFiles, type DownloadFile } from "./lib/StrapiData";
+  import {type DownloadFile, getDownloadFiles, getHeroContent} from "./lib/StrapiData";
+  import {marked} from "marked";
 
+  let HeroContent: string | Promise<string> = "";
   let DownloadFiles: DownloadFile[] = [];
 
   onMount(async () => {
+    HeroContent = marked(await getHeroContent());
     DownloadFiles = await getDownloadFiles();
   });
 </script>
 
 <main>
-  <div class="circles">
-    <span class="circle" />
-    <span class="circle" />
-    <span class="circle" />
-    <span class="circle" />
-    <span class="circle" />
-  </div>
-
-  <div class="hero">
-    <img src="/Zamma.svg" alt="Zamma" />
-    <h2>Zamma obe (und wieda auffe)</h2>
-	<p>
-	1. Holzkirchener Seifenkistenrennen im Rahmen des Zamma - Das Festival in Oberbayern
-	</p>
-	<p><b>Links zu den Platzierungen weiter unten</b></p>
-	<p>
-	Wann? Samstag 20. Juli 2024, Rennstart ab 14:00 Uhr; ab 12:00 Uhr Technische Abnahme in den Fahrer*innen Lager; ab 13:30 Uhr Start der LIVE-Moderation; Siegerehrung abends am Marktplatz
-	</p>
-	<p>
-	Wo? Auf der Münchner Straße zwischen Oskar-von-Miller-Platz und Bahnhofsplatz (Straßensperrung am Renntag zwischen 12:00 Uhr und 18:00 Uhr)
-	</p>
-	<p>
-	Wer? Über 20 Teams in verschiedenen Rennklasssen
-	</p>
-	<p>
-	Verschiedene Rennklassen<br>
-	1) Klassisches Seifenkistenrennen bergab<br>
-	2) Gaudi-Rennen mit Wertungspunkten<br>
-	3) Seifenkistenrennen bergauf mit Nachhaltigen Antrieben
-	</p>
-<!--	<p>
-	
-      Bei ZAMMA erwartet die Bürgerinnen und Bürger von Holzkirchen ein
-      mehrtägiges Programm aus den Bereichen Kultur, Jugend, Gesellschaft &
-      Soziales, Religion, Sport & Bewegung, Tradition & Heimat, Umwelt & Natur
-      sowie Wirtschaft & Wissenschaft. Das Festival ist seit 1980 fester
-      Bestandteil der Kulturarbeit des Bezirks Oberbayern und leistet einen
-      wichtigen Beitrag zur Förderung des kulturellen und sozialen Miteinanders
-      in den Regionen. Der Bezirk Oberbayern veranstaltet das Festival alle zwei
-      Jahre mit einer ausgewählten Bewerberkommune – zuletzt mit Bad Aibling und
-      Garmisch-Partenkirchen.
-    </p> -->
-  </div>
-
-<!--
-	<div class="ergebnisse">
-	<h2>Platzierungen in Rennklassen</h2>
-	<div>
-	<ul>
-	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrgjUuAqRtqmJsky">Rennklasse 1 - Bergab</a></li>
-	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrHR3QRxJ2Ow3T3r">Rennklasse 2 - Gaudirennen</a></li>
-	<li><a href="https://airtable.com/appe8lx1oMBvyBYsy/shrk48iweWRtsFYU1">Rennklasse 3 - Bergauf</a></li>
-	</ul>
-	</div>
-	</div>
--->
-  <div class="downloads">
-    <img src="/icons/Arrow.svg" alt="Arrow" />
-    <h2>Downloads</h2>
-    <div>
-      {#each DownloadFiles as file}
-        <FileDownload title={file.name} url={file.url} />
-      {/each}
+    <div class="circles">
+        <span class="circle"/>
+        <span class="circle"/>
+        <span class="circle"/>
+        <span class="circle"/>
+        <span class="circle"/>
     </div>
-  </div>
 
-  <Footer />
+    <div class="hero">
+        <img src="/Zamma.svg" alt="Zamma"/>
+        {@html HeroContent}
+    </div>
+
+    <div class="downloads">
+        <img src="/icons/Arrow.svg" alt="Arrow"/>
+        <h2>Downloads</h2>
+        <div>
+            {#each DownloadFiles as file}
+                <FileDownload title={file.name} url={file.url}/>
+            {/each}
+        </div>
+    </div>
+
+    <Footer/>
 </main>
 
 <style lang="scss">
@@ -93,6 +53,7 @@
       transform: translate(0, 0);
     }
   }
+
   main {
     .circles {
       position: absolute;
@@ -176,25 +137,28 @@
         }
       }
     }
+
     .hero {
       display: flex;
       flex-direction: column;
       place-items: center;
+      padding-inline: 2rem;
       margin-top: 20vh;
-      margin-inline: 2rem;
+      margin-inline: auto;
+      max-width: 900px;
 
       img {
         width: 30rem;
         z-index: 1;
       }
 
-      h2 {
-        font-size: 1.3rem;
-        margin-top: 0.7rem;
+      :global(h1) {
+        font-size: 3rem;
+        margin-top: 3rem;
         z-index: 1;
       }
 
-      p {
+      :global(p) {
         font-size: 1.2rem;
         margin-top: 2rem;
         max-width: 900px;
@@ -211,40 +175,6 @@
         p {
           font-size: 1rem;
         }
-      }
-    }
-
-    .ergebnisse {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #d9d9d9;
-      padding: 1rem 0 5rem 0;
-      margin-top: 15rem;
-      margin-bottom: 5rem;
-      margin-inline: 2rem;
-      border-radius: 30px;
-
-      img {
-        width: 4rem;
-        position: relative;
-        top: -2rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-        padding-bottom: 1rem;
-      }
-
-      ul {
-        font-size: 1.5rem;
-        padding-bottom: 1rem;
-      }
-
-      @media (max-width: 768px) {
-        margin-top: 10rem;
-        margin-inline: 1rem;
-        padding-inline: 1rem;
       }
     }
 

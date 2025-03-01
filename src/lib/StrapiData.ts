@@ -1,17 +1,17 @@
-import type { DownloadFilesResponse } from "../types/StrapiResponse";
-import { STRAPI_URL } from "./config";
+import type {DownloadFilesResponse, HeroContentResponse} from "../types/StrapiResponse";
+import {STRAPI_URL} from "./config";
+
+export const getHeroContent = async () => {
+  const response = await fetch(`${STRAPI_URL}/api/hero-content`);
+  const data: HeroContentResponse = await response.json();
+  return data.data.attributes.Inhalt;
+}
 
 export type DownloadFile = {
   id: number;
   name: string;
   url: string;
 };
-
-async function getImgURL(id: number) {
-  const response = await fetch(`${STRAPI_URL}/files/lel/${id}`);
-  const data = await response.json();
-  const URL = data.url;
-}
 
 export async function getDownloadFiles(): Promise<DownloadFile[]> {
   const response = await fetch(`${STRAPI_URL}/api/downloadss?populate=Datei`);
@@ -23,7 +23,7 @@ export async function getDownloadFiles(): Promise<DownloadFile[]> {
     const id = file.attributes.Datei.data.id;
     const name = file.attributes.Titel;
     const url = STRAPI_URL + file.attributes.Datei.data.attributes.url;
-    files.push({ id, name, url });
+    files.push({id, name, url});
   }
 
   return files;

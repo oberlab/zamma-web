@@ -1,3 +1,14 @@
+export type HeroContentResponse = {
+  data: {
+    id: number;
+    attributes: {
+      Inhalt: string;
+    };
+  };
+  meta: {};
+}
+
+
 export type DownloadFilesResponse = {
   data: {
     id: number;
