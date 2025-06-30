@@ -28,6 +28,17 @@
         {@html HeroContent}
     </div>
 
+<div class="ergebnisse">
+<h2>Platzierungen in Rennklassen</h2>
+<div>
+<ul>
+<li><a href="https://airtable.com/appIGfU8vBCfT1WOT/shrqYra4EMXu2F1tO?raQ5f%3Asort=eyJwZWxJTHRBdTRLTjI4ek8wUSI6eyJjb2x1bW5JZCI6ImZsZDdkNlZBS2I2TmFkWTJPIiwiYXNjZW5kaW5nIjp0cnVlfX0">Rennklasse 1 - Bergab</a>
+<li><a href="https://airtable.com/appIGfU8vBCfT1WOT/shrK8EGcvHiVIqw66?raQ5f%3Asort=eyJwZWxJTHRBdTRLTjI4ek8wUSI6eyJjb2x1bW5JZCI6ImZsZDFSS0U4eVdvam5tUHJWIiwiYXNjZW5kaW5nIjp0cnVlfX0">Rennklasse 2 - Gaudirennen</a>
+<li><a href="https://airtable.com/appIGfU8vBCfT1WOT/shrIwQoX9QyRMvOLo?raQ5f%3Asort=eyJwZWxJTHRBdTRLTjI4ek8wUSI6eyJjb2x1bW5JZCI6ImZsZG13eThEdkl3bnpTWWRjIiwiYXNjZW5kaW5nIjp0cnVlfX0">Rennklasse 3 - Bergauf</a>
+</ul>
+</div>
+</div>
+
     <div class="downloads">
         <img src="/icons/Arrow.svg" alt="Arrow"/>
         <h2>Downloads</h2>
