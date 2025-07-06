@@ -27,7 +27,7 @@
         <img src="/Zamma.svg" alt="Zamma"/>
         {@html HeroContent}
     </div>
-
+<!--
 <div class="ergebnisse">
 <h2>Platzierungen in Rennklassen</h2>
 <div>
@@ -38,6 +38,7 @@
 </ul>
 </div>
 </div>
+-->
 
     <div class="downloads">
         <img src="/icons/Arrow.svg" alt="Arrow"/>
