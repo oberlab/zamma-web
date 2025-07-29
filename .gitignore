@@ -31,4 +31,5 @@ strapi/.cache
 strapi/.strapi-updater.json
 strapi/build
 strapi/public
+/uploads
 
