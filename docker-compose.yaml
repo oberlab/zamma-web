@@ -25,6 +25,7 @@ services:
     volumes:
       - ${PWD}/strapi/src:/app/src
       - ${PWD}/strapi/config:/app/config
+      - ./uploads:/app/public/uploads
     ports:
       - "1337:1337"
     depends_on:
